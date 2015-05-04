@@ -17,20 +17,20 @@ lat_max,long_max = northeast_corner.split(",")
 #
 # All of our magical search functions here
 #
-def panaramio_search(fd):
+def panoramio_search(fd):
     
     image_searcher = pynoramio.Pynoramio()
 
     # perform the search
-    panaramio_results = image_searcher.get_from_area(float(lat_min), float(long_min), float(lat_max), float(long_max),picture_size="original",map_filter=False)
+    panoramio_results = image_searcher.get_from_area(float(lat_min), float(long_min), float(lat_max), float(long_max),picture_size="original",map_filter=False)
 
-    # panaramio_results is a dictionary with: count, has_more, map_location, photos
-    if panaramio_results['count'] > 0:
+    # panoramio_results is a dictionary with: count, has_more, map_location, photos
+    if panoramio_results['count'] > 0:
         
-        print "[*] Retrieved: %d results" % panaramio_results['count']
+        print "[*] Retrieved: %d results" % panoramio_results['count']
         
         # now retrieve all photos from this search
-        for photo in panaramio_results['photos']:
+        for photo in panoramio_results['photos']:
           
             # write the image out to our HTML page with a link to Google Maps
             fd.write("<a target='_blank' href='http://maps.google.com/?q=%f,%f'><img src='%s' border='0'></a><br/>\r\n" % 
@@ -49,7 +49,7 @@ fd = open("%s/%s.html" % (search_name,search_name), "wb")
 fd.write("<html><head></head><body>")
 
 # now do a paramio search
-panaramio_search(fd)
+panoramio_search(fd)
 
 # close the HTML file
 fd.write("</body></html>")
