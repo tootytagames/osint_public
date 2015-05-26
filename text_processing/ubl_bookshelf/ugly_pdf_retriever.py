@@ -10,7 +10,7 @@ try:
 except:
     pass
 
-response = requests.get("http://www.dni.gov/index.php/resources/bin-laden-bookshelf")
+response = requests.get("http://www.dni.gov/index.php/resources/bin-laden-bookshelf?start=1")
 
 if response.status_code == 200:
     
