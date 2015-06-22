@@ -5,7 +5,7 @@ import requests
 
 from geopy.distance import vincenty
 
-wikimapia_api_key = "CE577AC8-965FF2D8-23226F8B-820E8986-39FB353A-F106A4AF-BB2C2704-70B26684"
+wikimapia_api_key = "YOURWIKIMAPIAAPIKEYHERE"
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-c","--city",required=True,help="Pass in a city name like: Aurora Colorado")
