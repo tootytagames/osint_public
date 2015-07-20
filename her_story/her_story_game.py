@@ -1,3 +1,11 @@
+# type "help" into any menu to get help
+# search <keyword> will bring up results
+# play <videoid> will play the video and remove it from your played list
+# back will return you to the main menu
+# quit will end the game
+
+# Only for OSX right now, feel free to adapt for Windows
+
 import cmd
 import os
 
