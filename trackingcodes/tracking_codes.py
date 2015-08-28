@@ -1,3 +1,8 @@
+# 
+# This script was co-developed by:
+# Lawrence Alexander - https://www.twitter.com/LawrenceA_UK
+# Justin Seitz - https://www.twitter.com/jms_dot_py
+#
 from lxml import html
 
 import json
