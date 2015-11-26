@@ -82,7 +82,7 @@ for match in results:
         if link.url not in result_urls:
             
             result_urls.append(link.url)
-            dates[link.crawl_date] = url
+            dates[link.crawl_date] = link.url
 
 print            
 print "[*] Discovered %d unique URLs with image matches." % len(result_urls)
