@@ -17,7 +17,7 @@ video_id    = args['videoID']
 #
 # Retrieve the video details based on videoID
 #
-def send_youtube_video_request(video_id):
+def youtube_video_details(video_id):
 
     api_url  = "https://www.googleapis.com/youtube/v3/videos?part=snippet%2CrecordingDetails&"
     api_url += "id=%s&" % video_id
@@ -35,7 +35,7 @@ def send_youtube_video_request(video_id):
 
 
 print "[*] Retrieving video ID: %s" % video_id
-video_data = send_youtube_video_request(video_id)
+video_data = youtube_video_details(video_id)
 
 thumbnails = video_data['items'][0]['snippet']['thumbnails']
 
