@@ -209,19 +209,19 @@ def graph_connections(connections,domains,graph_file):
     for connection in connections:
         
         # add the tracking code to the graph
-        graph.add_node(connection,{"type":"tracking_code"})
+        graph.add_node(connection,attr={"type":"tracking_code"})
         
         for domain in connections[connection]:
             
             # if it was one of our original domains we set the attribute appropriately
             if domain in domains:
                 
-                graph.add_node(domain,{"type":"source_domain"})
+                graph.add_node(domain,attr={"type":"source_domain"})
                 
             else:
                 
                 # this would be a discovered domain so the attribute is different
-                graph.add_node(domain,{"type":"domain"})
+                graph.add_node(domain,attr={"type":"domain"})
                 
             # now connect the tracking code to the domain
             graph.add_edge(connection,domain)
